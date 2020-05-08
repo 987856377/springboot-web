@@ -27,6 +27,6 @@ public class BasicRequestFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         logger.info("BasicRequestFilter: " + httpServletRequest.getRequestURL());
-//        filterChain.doFilter(httpServletRequest,httpServletResponse);
+        filterChain.doFilter(httpServletRequest,httpServletResponse);
     }
 }

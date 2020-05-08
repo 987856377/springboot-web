@@ -43,7 +43,7 @@ public class GlobalRequestListener implements ServletContextListener {
 //        timer.schedule(absenceRecordTask, time, 1000 * 60 * 60 * 24);// 这里设定将延时每天固定执行
 //        timer.schedule(absenceRecordTask, 0, 1000 * 10);    // 测试使用, 每 10s 执行一次
         ThreadPoolExecutorUtil.getThreadPoolExecutor().execute(() -> {
-            timer.schedule(absenceRecordTask, 0, 1000 * 10);
+            timer.schedule(absenceRecordTask, 0, 1000 * 60 * 60);
         });
         logger.info("-------GlobalTask   Timer 正在执行--------------");
     }

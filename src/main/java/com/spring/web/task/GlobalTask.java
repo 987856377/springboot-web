@@ -24,10 +24,10 @@ public class GlobalTask extends TimerTask {
     double Gb = 1024 * 1024 * 1024 * 1.0;
 
     // jvm
-    double jvmMaxMemory = getDoubleValue(Runtime.getRuntime().maxMemory() / Mb);
-    double jvmTotalMemory = getDoubleValue(Runtime.getRuntime().totalMemory() / Mb);
-    double jvmFreeMemory = getDoubleValue(Runtime.getRuntime().freeMemory() / Mb);
-    double jvmUsableMemory = getDoubleValue((Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / Mb);
+    double jvmMaxMemory = getDoubleValue(Runtime.getRuntime().maxMemory() / (Mb));
+    double jvmTotalMemory = getDoubleValue(Runtime.getRuntime().totalMemory() / (Mb));
+    double jvmFreeMemory = getDoubleValue(Runtime.getRuntime().freeMemory() / (Mb));
+    double jvmUsableMemory = getDoubleValue((Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / (Mb));
 
     // os
     OperatingSystemMXBean osmxb = (OperatingSystemMXBean) ManagementFactory
