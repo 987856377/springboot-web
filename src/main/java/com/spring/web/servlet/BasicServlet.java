@@ -23,6 +23,6 @@ public class BasicServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print("Welcome to Basic develop branch Servlet");
+        resp.getWriter().print("Welcome to Basic master branch Servlet");
     }
 }
