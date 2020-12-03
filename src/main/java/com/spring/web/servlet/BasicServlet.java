@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @Description
@@ -29,7 +30,7 @@ public class BasicServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 获取 post 请求中 json 数据
         String param = null;
-        BufferedReader streamReader = new BufferedReader(new InputStreamReader(req.getInputStream(), "UTF-8"));
+        BufferedReader streamReader = new BufferedReader(new InputStreamReader(req.getInputStream(), StandardCharsets.UTF_8));
         StringBuilder responseStrBuilder = new StringBuilder();
         String inputStr;
         while ((inputStr = streamReader.readLine()) != null) {
@@ -43,6 +44,7 @@ public class BasicServlet extends HttpServlet {
 
         // 返回 json 格式的数据
         resp.setContentType("application/json; charset=UTF-8");
+        assert param != null;
         resp.getWriter().write(param);
     }
 }
