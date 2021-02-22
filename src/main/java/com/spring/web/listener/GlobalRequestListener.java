@@ -10,9 +10,11 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * @Description
@@ -46,6 +48,13 @@ public class GlobalRequestListener implements ServletContextListener {
             timer.schedule(absenceRecordTask, 0, 1000 * 60 * 60);
         });
         logger.info("-------GlobalTask   Timer 正在执行--------------");
+
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                logger.info("now: " + LocalDateTime.now());
+            }
+        }, 0, 1000);
     }
 
     @Override
